@@ -151,7 +151,7 @@
     <script>
                var start = new Date;
                start.setHours(16, 35, 0); 
-        var h =  start.getHours(), m = dt.getMinutes();
+        var h =  start.getHours(), m = start.getMinutes();
         var thistime = (h > 12) ? (h-12 + ':' + m +' PM') : (h + ':' + m +' AM');
         document.getElementById("t").innerText = "Last Login Time : " + thistime;
        
