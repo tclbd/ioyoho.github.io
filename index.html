@@ -57,7 +57,7 @@
     .profile-name {
         font-size: 18px;
         margin: 25px 0 0 120px;
-        color: red;
+        color: green;
         font-weight : 700%;
     }
     
@@ -120,16 +120,17 @@
             <h4 class="profile-name">
                <img src="yoho.png" style="height: 13px;"> 
               <i class="fa fa-circle" aria-hidden="true" style="font-size: 12px;"></i> 
-              <b style="color: red;font-size: 12px;"> Offline <label id="tt" style="font-size: 12px;color: blue"></label></b>
+              <b style="color: green;font-size: 12px;">Online <label id="tt" style="font-size: 12px;color: blue"></label></b>
             </h4>
             <p class="about" style="color: black;">
               <i class="fa fa-user" aria-hidden="true" style="font-size: 12px;"></i> 
               <b>  IO (سير) <i class="fa fa-check-circle" aria-hidden="true" style="color:blue; "></i> </b> 
             </p>
             <p style="color:black; margin-top: 10px;">
-                 <i class="fa fa-id-card" aria-hidden="true"></i> ID: <strong style="color: black">NULL</strong>
+                 <i class="fa fa-id-card" aria-hidden="true"></i> ID: <strong style="color: black">84368862</strong>
             </p>
-             <p id="t" style="font-size: 12px;color: red"></p>
+        <br>
+             <p id="t" style="font-size: 12px;color: blue"></p>
             <button class="btn"><i class="fa fa-comment" aria-hidden="true"></i> Feedback </button>
              <!-- <button class="btn"><i class="fa fa-info-circle" aria-hidden="true"></i> Cyber Help (coming Soon)</button>  -->
             <h5 style="color: black">𝖤𝗏𝖾𝗋𝗒𝗈𝗇𝖾 𝗐𝗂𝗅𝗅 𝖽𝗂𝖾 𝗈𝗇𝖾 𝖽𝖺𝗒</h5>
@@ -143,10 +144,12 @@
 
     <script>
                var start = new Date;
-               start.setHours(10, 46, 15); // 11pm
-               document.getElementById("t").innerText = "Last Seen : " + start.getHours()+ ":" + start.getMinutes();
+               start.setHours(11, 05, 15); // 11pm
+               document.getElementById("t").innerText = "Logged on : " + start.getHours()+ ":" + start.getMinutes();
         (function() {
         
+
+      
         function pad(num) {
           return ("0" + parseInt(num)).substr(-2);
         }
@@ -160,9 +163,9 @@
           var hh = pad((remain / 60 / 60) % 60);
           var mm = pad((remain / 60) % 60);
           var ss = pad(remain % 60);
-          var diff = hh;
+          var diff = hh + ":" + mm;
           //console.clear();
-          document.getElementById("tt").innerText = diff + " hrs ago";
+          document.getElementById("tt").innerText = diff;
          // console.log(diff);
           setTimeout(tick, 1000);
         }
