@@ -114,7 +114,7 @@
 <body onload="startTime()">
     
     <div class="card">
-        <h6 style="color: black;">أشهد أن لا إله إلا الله وأشهد أن محمدا رسول الله</h6>  <label id="txt" style="font-size: 12px;color: red"></label>
+        <h6 style="color: black;">أشهد أن لا إله إلا الله وأشهد أن محمدا رسول الله</h6>  <img src="bangladesh.png" style="height: 15px;"><label id="txt" style="font-size: 12px;color: red"></label>
             <div class="cover-photo">
                 <img src="Syr.jpeg" class="profile">
             </div>
@@ -135,18 +135,18 @@
             <p style="color:black; margin-top: 10px;">
                  <i class="fa fa-id-card" aria-hidden="true"></i> ID: <strong style="color: black">84368862</strong>
             </p>
-        <br>
-
+     
 
           
-        <p>
-<img src="live-streaming.png" style="height: 11px;">
-     <span id="tt" style=" font-size : 12px; color : red;"></span>
-            
-        </p>  
 
         
-        <p id="t" style="font-size: 12px;color: blue"></p>
+        <p style="font-size: 14px;color: gainsboro"><b id="t"></b></p>
+           <br>
+    <p>
+        <img src="live-streaming.png" style="height: 15px;">
+     <span id="tt" style=" font-size : 15px; color : red;"></span>
+            
+        </p>  
             <button class="btn"><i class="fa fa-comment" aria-hidden="true"></i> Feedback </button>
              <!-- <button class="btn"><i class="fa fa-info-circle" aria-hidden="true"></i> Cyber Help (coming Soon)</button>  -->
             <h5 style="color: black">𝖤𝗏𝖾𝗋𝗒𝗈𝗇𝖾 𝗐𝗂𝗅𝗅 𝖽𝗂𝖾 𝗈𝗇𝖾 𝖽𝖺𝗒</h5>
@@ -163,7 +163,7 @@
                start.setHours(16, 35, 0); 
         var h =  start.getHours(), m = start.getMinutes();
         var thistime = (h > 12) ? (h-12 + ':' + m +' PM') : (h + ':' + m +' AM');
-        document.getElementById("t").innerText = "Last Login Time : " + thistime;
+        document.getElementById("t").innerText = "Login Time : " + thistime;
        
         
         (function() {
@@ -184,7 +184,7 @@
           
           //console.clear();
          
-            document.getElementById("tt").innerText = hh + ":" + mm + " hrs";
+            document.getElementById("tt").innerText = "Live : " + hh + ":" + mm + " hrs";
          // console.log(diff);
           setTimeout(tick, 1000);
         }
