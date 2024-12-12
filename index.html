@@ -145,12 +145,14 @@
 
     <script>
                var start = new Date;
-               start.setHours(16, 35, 0); // 11pm
-               document.getElementById("t").innerText = "Last Login Time : " + start.getHours()+ ":" + start.getMinutes();
-        (function() {
+               start.setHours(16, 35, 0); 
+        var h =  start.getHours(), m = dt.getMinutes();
+        var thistime = (h > 12) ? (h-12 + ':' + m +' PM') : (h + ':' + m +' AM');
+        document.getElementById("t").innerText = "Last Login Time : " + thistime;
+       
         
-
-      
+        (function() {
+            
         function pad(num) {
           return ("0" + parseInt(num)).substr(-2);
         }
@@ -166,7 +168,8 @@
           var ss = pad(remain % 60);
           var diff = hh + ":" + mm;
           //console.clear();
-          document.getElementById("tt").innerText = diff + "hrs";
+         
+            document.getElementById("tt").innerText = diff + " hrs";
          // console.log(diff);
           setTimeout(tick, 1000);
         }
@@ -184,7 +187,8 @@ function startTime() {
   let s = today.getSeconds();
   m = checkTime(m);
   s = checkTime(s);
-  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+    var thistime = (h > 12) ? (h-12 + ':' + m +' PM') : (h + ':' + m +' AM');  
+    document.getElementById('txt').innerHTML =  thistime;
   setTimeout(startTime, 1000);
 }
 
