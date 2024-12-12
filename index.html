@@ -1,13 +1,16 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-<head>
-<title>
-
-  Syr سير @ YoHo
-         
-</title>
+<!DOCTYPE html>
+<html>
     
-</head>
-
+<head>
+    <title>
+    
+      Syr سير @ YoHo
+             
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    
+    </head>
+    
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
     * {
@@ -107,16 +110,17 @@
     }
     
     </style>
+<body onload="startTime()">
     
     <div class="card">
-        <h6 style="color: black;">أشهد أن لا إله إلا الله وأشهد أن محمدا رسول الله</h6>
+        <h6 style="color: black;">أشهد أن لا إله إلا الله وأشهد أن محمدا رسول الله</h6>  <label id="txt" style="font-size: 12px;color: red"></label>
             <div class="cover-photo">
                 <img src="Syr.jpeg" class="profile">
             </div>
             <h4 class="profile-name">
                <img src="yoho.png" style="height: 13px;"> 
               <i class="fa fa-circle" aria-hidden="true" style="font-size: 12px;"></i> 
-              <b style="color: green;font-size: 12px;">Online</b>
+              <b style="color: green;font-size: 12px;">Online <label id="tt" style="font-size: 12px;color: blue"></label></b>
             </h4>
             <p class="about" style="color: black;">
               <i class="fa fa-user" aria-hidden="true" style="font-size: 12px;"></i> 
@@ -125,9 +129,69 @@
             <p style="color:black; margin-top: 10px;">
                  <i class="fa fa-id-card" aria-hidden="true"></i> ID: <strong style="color: black">84368862</strong>
             </p>
+             <p id="t" style="font-size: 12px;color: blue"></p>
             <button class="btn"><i class="fa fa-comment" aria-hidden="true"></i> Direct Message (Coming Soon)</button>
-             <button class="btn"><i class="fa fa-info-circle" aria-hidden="true"></i> Cyber Help (coming Soon)</button> 
+             <!-- <button class="btn"><i class="fa fa-info-circle" aria-hidden="true"></i> Cyber Help (coming Soon)</button>  -->
             <h5 style="color: black">"𝖤𝗏𝖾𝗋𝗒𝗈𝗇𝖾 𝗐𝗂𝗅𝗅 𝖽𝗂𝖾 𝗈𝗇𝖾 𝖽𝖺𝗒"</h5>
 
-         <h5 style="color: blue"><a href="https://ioyoho.github.io"/>yohoio.github.io</h5>
+         <h5 "><a href="https://ioyoho.github.io"/>ioyoho.github.io</h5>
+      
     </div>
+
+
+
+
+    <script>
+               var start = new Date;
+               start.setHours(9, 30, 15); // 11pm
+               document.getElementById("t").innerText = "Logged on at : " + start.getHours()+ ":" + start.getMinutes();
+        (function() {
+        
+
+      
+        function pad(num) {
+          return ("0" + parseInt(num)).substr(-2);
+        }
+      
+        function tick() {
+          var now = new Date;
+          if (now < start) {
+            start.setDate(start.getDate() - 1);
+          }
+          var remain = ((now - start) / 1000);
+          var hh = pad((remain / 60 / 60) % 60);
+          var mm = pad((remain / 60) % 60);
+          var ss = pad(remain % 60);
+          var diff = hh + ":" + mm;
+          //console.clear();
+          document.getElementById("tt").innerText = diff;
+         // console.log(diff);
+          setTimeout(tick, 1000);
+        }
+        tick()
+      })();
+      </script>
+
+
+
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+</body>
+</html>
+
